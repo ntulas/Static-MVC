@@ -1,5 +1,6 @@
+<?php $this->suspensionRedirect($view); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" <?php $this->helpers->htmlClasses(); ?>>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,7 +17,7 @@
 </head>
 
 <body <?php $this->helpers->bodyClasses($view); ?>>
-
+<?php $this->checkSuspensionHeader(); ?>
 	<header>
 		<div id="header">
 			<div class="row">

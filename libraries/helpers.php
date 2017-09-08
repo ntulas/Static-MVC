@@ -204,4 +204,10 @@ public function bodyClasses($view){
 		echo 'class="home"';
 	}
 }
+
+public function htmlClasses(){
+	if($this->siteInfo["suspended"]){
+		echo 'class="suspended"';
+	}
+}
 }

@@ -70,4 +70,22 @@ class Controller {
 			$this->helpers->sendEmail($args);
 		}
 
+	public function suspensionRedirect($view){
+		if($view != "home" && $this->siteInfo["suspended"]){
+			header("Location:".URL);
+		}
+	}
+	public function checkSuspensionHeader(){
+		if($this->siteInfo["suspended"]){
+			echo '<div class="suspension-contain">';
+		}
+	}
+
+	public function checkSuspensionFooter(){
+		if($this->siteInfo["suspended"]){
+			require MVC . 'view/template/suspension.php';
+			echo '</div>';
+		}
+	}
+
 	}
